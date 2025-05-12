@@ -143,8 +143,11 @@ function startVoiceInput() {
       .replace(/minus/g, "-")
       .replace(/times|into|multiply/g, "*")
       .replace(/divided by|divide/g, "/")
-      .replace(/percent/g, "%")
-      .replace(/point/g, ".");
+      .replace(/percent|percentage/g, "%")
+      .replace(/point/g, ".")
+      .replace(/is equal to/g, "=")
+      .replace(/point/g, ".")
+      .replace(/clear|delete/g, "c");
 
     document.getElementById("display").value = speech;
     calculateResult();
@@ -154,12 +157,7 @@ function startVoiceInput() {
     showNotification("🎤 Voice input failed");
   };
 }
-function stopVoiceInput() {
-  if (recognition) {
-    recognition.abort();
-    showNotification("🔇 Voice input stopped");
-  }
-}
+
 function calculateResult() {
   try {
     let expression = document.getElementById("display").value;
@@ -181,3 +179,14 @@ function speakResult(result) {
   utterance.lang = 'en-US'; // You can change to other languages like 'en-GB', 'fr-FR', etc.
   window.speechSynthesis.speak(utterance);
 }
+function toggleHistory() {
+  const historySection = document.getElementById("historySection");
+  const toggleBtn = document.querySelector(".toggle-history-btn");
+
+  const isVisible = historySection.style.display === "block";
+
+  historySection.style.display = isVisible ? "none" : "block";
+  toggleBtn.textContent = isVisible ? "Show History" : "Close History";
+}
+
+

@@ -4,30 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
-    <script type="module">
-
-
-
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
-
+    <script type="module"></script>
     <link rel="stylesheet" href="style.css" />
-
-
+    
   </head>
   <body>
+
+
     <div class="container">
-        <div class="history">
-  <h3>History</h3>
-  <ul id="historyList"></ul>
-</div>
-<button onclick="clearHistory()" class="clear-history">🗑️ Clear History</button>
+
+          <div class="history" id="historySection" style="display: none;">
+            <h3>History</h3>
+            <ul id="historyList"></ul>
+          </div>
+        
+
+
       <div class="calculator">
-        <input type="text" id="display" disabled />
+        <div class="display-wrapper">
+  <div class="label">DK CALCULATOR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="dklogo.png" alt="logo" width="25" height="25"></div>
+  <input type="text" id="display" disabled />
+</div>
+
+
         <div class="buttons">
           <div class="buttons">
-            <button onclick="clearDisplay()">C</button>
+            <button onclick="clearDisplay()" class="C">C</button>
             <button onclick="backspace()">⌫</button>
             <button onclick="appendValue('/')">/</button>
             <button onclick="appendValue('*')">*</button>
@@ -50,12 +52,13 @@
             <button onclick="appendValue('0')">0</button>
             <button onclick="appendValue('.')">.</button>
             <button onclick="calculateResult()" class="equal">=</button>
-            <button onclick="toggleDarkMode()" class="dark-toggle">🌙</button>
+            
 
 
             <button onclick="startVoiceInput()">🎙️</button>
-            <button onclick="stopVoiceInput()">🔇</button>
-
+            <button onclick="toggleHistory()" class="toggle-history-btn">Show History</button>
+            <button onclick="clearHistory()" class="clear-history">Clear History</button>
+            <button onclick="toggleDarkMode()" class="dark-toggle">🌙</button>
           </div>
         </div>
       </div>
