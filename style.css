@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.calculator {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+#display {
+  width: 100%;
+  height: 60px;
+  font-size: 24px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: right;
+  background-color: #f9fafb;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 26.5px;
+  font-size: 20px;
+  background: #e5e7eb;
+  border: none;
+    border-radius: 8px;
+    grid-template-columns: repeat(4, 1fr);
+    cursor: pointer;
+    transition: background 0.2s ease;
+    gap: 10px;
+}
+
+button:hover {
+  background: #d1d5db;
+}
+
+.equal {
+  background-color: #10b981;
+  color: white;
+}
+
+.equal:hover {
+  background-color: #059669;
+}
+
+body.dark {
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+
+body.dark .calculator {
+  background-color: #111827;
+  color: white;
+}
+
+body.dark #display {
+  background-color: #1e293b;
+  color: white;
+  border: 1px solid #334155;
+}
+
+body.dark button {
+  background-color: #374151;
+  color: #f1f5f9;
+}
+
+body.dark button:hover {
+  background-color: #4b5563;
+}
+
+button.dark-toggle {
+  background-color: #000000;
+  color: rgb(0, 0, 0);
+}
+
+button.dark-toggle:hover {
+  background-color: #000000;
+}
+.history {
+  margin-top: 20px;
+  background: #f1f5f9;
+  padding: 15px;
+  border-radius: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.history h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.history ul {
+  list-style: none;
+  padding: 0;
+  font-size: 16px;
+  color: #1f2937;
+}
+
+body.dark .history {
+  background-color: #1e293b;
+  color: #f9fafb;
+}
+
+body.dark .history ul {
+  color: #f9fafb;
+}
+.clear-history {
+  margin-top: 10px;
+  background-color: #ef4444;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.clear-history:hover {
+  background-color: #dc2626;
+}
+button:active {
+  transform: scale(0.95);
+}
+button.voice-button {
+  background-color: #3b82f6;
+  color: white;
+}
+
+button.voice-button:hover {
+  background-color: #2563eb;
+}
+button.voice-button:active {
+  transform: scale(0.95);
+}
+button.stop-voice-button {
+  background-color: #ef4444;
+  color: white;
+}
+
+button.stop-voice-button:hover {
+  background-color: #dc2626;
+}
+button.stop-voice-button:active {
+  transform: scale(0.95);
+}
